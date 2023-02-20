@@ -1,0 +1,56 @@
+{
+  "name": "timer-tracker",
+  "displayName": "timer-tracker",
+  "description": "TimerTracker is a VS Code extension that helps you keep track of your development time by monitoring your build and Flutter command executions. With TimerTracker, you can easily measure how much time you spend waiting for your code to build or running flutter clean and flutter pub get commands. The extension saves the time spent on each operation to a local file, so you can review your activity and optimize your workflow. Use TimerTracker to improve your productivity and stay in control of your development time.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "timer-tracker.startDebugging",
+        "title": "Start Debugging"
+      },
+      {
+        "command": "timer-tracker.flutterClean",
+        "title": "Flutter Clean"
+      },
+      {
+        "command": "timer-tracker.flutterPubGet",
+        "title": "Flutter Pub Get"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "dependencies": {
+    "child_process": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.75.0",
+    "@types/glob": "^8.0.1",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
+    "eslint": "^8.33.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.1.0",
+    "typescript": "^4.9.4",
+    "@vscode/test-electron": "^2.2.2"
+  }
+}
