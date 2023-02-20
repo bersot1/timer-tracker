@@ -1,71 +1,41 @@
-# timer-tracker README
-
-This is the README for your extension "timer-tracker". After writing up a brief description, we recommend including the following sections.
+# Build Time Tracker for VS Code
+This is an extension for Visual Studio Code that tracks the time spent building and debugging Flutter applications. It listens to events that occur during the build and debugging process and saves the data in a JSON file.
 
 ## Features
+* Tracks the time spent building and debugging Flutter applications
+* Saves the build data in a JSON file for later analysis
+* Detects the platform (iOS or Android) being debugged and saves the data accordingly
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## How to Install
+1. Open Visual Studio Code
+2. Click on the "Extensions" icon on the left-hand side of the screen
+3. Search for "Build Time Tracker" and click "Install"
+4. Restart Visual Studio Code
 
-For example if there is an image subfolder under your extension project workspace:
+## How to Use
+1. Open a Flutter project in Visual Studio Code
+2. Press F5 to start debugging the application
+3. The extension will automatically detect when the build is finished and save the data in the JSON file
+4. The file is saved in the user's home directory under the name .builds.json
 
-\!\[feature X\]\(images/feature-x.png\)
+## Features to be Added
+* The ability to view the build data in a more user-friendly format directly within the VS Code interface
+* Integration with analytics platforms like Google Analytics to provide more insight into the build process
+* The ability to filter build data by project, device, and date range
+* Integration with popular project management tools like Trello and Asana to automatically log build data as tasks in these tools
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
 
-## Requirements
+## File Location
+The data is saved in a JSON file called .builds.json located in the user's home directory. The file can be accessed using the following path:
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+`<user home directory>/.builds.json`
 
-## Extension Settings
+For example, on a Mac, the file would be located in the following path:
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+`/Users/<username>/.builds.json` 
 
-For example:
+## Contribution
+This extension is open-source, and contributions are welcome! If you encounter any issues or have suggestions for improvements, please open an issue on the Github repository.
 
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+## License
+This extension is licensed under the MIT License.
