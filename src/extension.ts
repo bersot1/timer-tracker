@@ -21,12 +21,16 @@ export function activate(context: vscode.ExtensionContext) {
 	let programName = '';
 	let deviceName = '';
 
+	context.subscriptions.push(vscode.debug.onDidTerminateDebugSession(event => {
+		resetStartTime();
+	}));
+
 
 	context.subscriptions.push(vscode.debug.onDidReceiveDebugSessionCustomEvent(event => {
 
-		console.log(event);
-
-		buildStartTime = new Date;
+		if (buildStartTime === undefined) {
+			buildStartTime = new Date;
+		}
 
 		let logMessage = event.body.message;
 
@@ -52,8 +56,15 @@ export function activate(context: vscode.ExtensionContext) {
 				saveTimeSpent(timeSpent.toString(), 'Start Debugging (F5)')
 
 			}
+
 		}
+
+
 	}))
+
+	function resetStartTime() {
+		buildStartTime = undefined;
+	}
 
 
 	function saveTimeSpent(timeSpent: string, commandName: string) {
@@ -76,6 +87,8 @@ export function activate(context: vscode.ExtensionContext) {
 				console.log('Build data saved successfully');
 			}
 		});
+
+		resetStartTime();
 	}
 }
 
