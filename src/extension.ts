@@ -12,7 +12,7 @@ export function activate(context: vscode.ExtensionContext) {
 	const regexGetOS = /(ios|android)/i;
 
 	const buildDoneLogiOS = 'Xcode build done.';
-	const buildDoneLogAndroid = 'Built build/app/outputs/flutter-apk';
+	const buildDoneLogAndroid = 'Installing build\\app\\outputs';
 
 	let buildStartTime: Date | undefined;
 
