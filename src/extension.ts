@@ -12,7 +12,9 @@ export function activate(context: vscode.ExtensionContext) {
 	const regexGetOS = /(ios|android)/i;
 
 	const buildDoneLogiOS = 'Xcode build done.';
-	const buildDoneLogAndroid = 'Installing build\\app\\outputs';
+
+	const buildDoneLogAndroidFromMac = 'Built build/app/outputs/flutter-apk';
+	const buildDoneLogAndroidFromWin = 'Installing build\\app\\outputs';
 
 	let buildStartTime: Date | undefined;
 
@@ -26,7 +28,13 @@ export function activate(context: vscode.ExtensionContext) {
 
 		buildStartTime = new Date;
 
-		if (event.body.message.includes(buildDoneLogiOS) || event.body.message.includes(buildDoneLogAndroid)) {
+		let logMessage = event.body.message;
+
+		if (
+			logMessage.includes(buildDoneLogiOS) ||
+			logMessage.includes(buildDoneLogAndroidFromWin) ||
+			logMessage.includes(buildDoneLogAndroidFromMac)
+		) {
 
 			deviceName = event.session.configuration.deviceName.match(regexGetOS)[0];
 			programName = event.session.configuration.cwd;

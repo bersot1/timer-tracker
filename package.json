@@ -2,7 +2,7 @@
   "name": "vscode-lbm-timer-tracker",
   "displayName": "Timer Tracker",
   "description": "TimerTracker is a VS Code extension that helps you keep track of your development time by monitoring your build and Flutter command executions. With TimerTracker, you can easily measure how much time you spend waiting for your code to build or running flutter clean and flutter pub get commands. The extension saves the time spent on each operation to a local file, so you can review your activity and optimize your workflow. Use TimerTracker to improve your productivity and stay in control of your development time.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "publisher": "LucasMarinho",
   "author": {
     "name": "Lucas Marinho",
